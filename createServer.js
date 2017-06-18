@@ -16,8 +16,6 @@ function createServer (count, userVoteCount) {
   // returns result for all contestants sorted in descending order of number of votes
   router.get('/', (req, res) => { 
     const sortedContestants = sortCountDesc(count)
-    console.log('count is: ', count)
-    console.log('sortedContestants is: ', sortedContestants)
     res.json(sortedContestants)
   })
 
