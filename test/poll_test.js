@@ -72,14 +72,14 @@ describe('user can vote', function () {
       canVote: true
     },
     {
-      name: `if they've voted less than ${poll.numberVotesPermittedPerUser} times`,
-      UserVoteCountObj: {'123': `${poll.numberVotesPermittedPerUser - 1}`},
+      name: `if they've voted less than ${poll.NUMBER_VOTES_PERMITTED_PER_USER} times`,
+      UserVoteCountObj: {'123': `${poll.NUMBER_VOTES_PERMITTED_PER_USER - 1}`},
       userID: '123',
       canVote: true
     },
     {
-      name: `but NOT if they've already voted ${poll.numberVotesPermittedPerUser} times`,
-      UserVoteCountObj: {'123': `${poll.numberVotesPermittedPerUser}`},
+      name: `but NOT if they've already voted ${poll.NUMBER_VOTES_PERMITTED_PER_USER} times`,
+      UserVoteCountObj: {'123': `${poll.NUMBER_VOTES_PERMITTED_PER_USER}`},
       userID: '123',
       canVote: false
     }

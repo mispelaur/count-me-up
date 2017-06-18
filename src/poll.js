@@ -1,8 +1,8 @@
-const numberVotesPermittedPerUser = 3
+const NUMBER_VOTES_PERMITTED_PER_USER = 3
 
 function canVote (userID, userVoteCount) {
   const numberVotesByUser = userVoteCount[userID]
-  return !numberVotesByUser || numberVotesByUser < numberVotesPermittedPerUser
+  return !numberVotesByUser || numberVotesByUser < NUMBER_VOTES_PERMITTED_PER_USER
 }
 
 function updateUserCount (userID, userVoteCount) {
@@ -25,5 +25,5 @@ module.exports = {
   canVote: canVote,
   updateUserCount: updateUserCount,
   vote: vote,
-  numberVotesPermittedPerUser: numberVotesPermittedPerUser
+  NUMBER_VOTES_PERMITTED_PER_USER: NUMBER_VOTES_PERMITTED_PER_USER
 }
