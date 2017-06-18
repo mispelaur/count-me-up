@@ -1,4 +1,4 @@
-const sortCountDesc = require('../sortCountDesc')
+const sortCountDesc = require('../src/sortCountDesc')
 const expect = require('chai').expect
 
 describe('sorts by descending values', function () { 

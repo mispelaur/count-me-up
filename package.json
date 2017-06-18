@@ -2,7 +2,7 @@
   "name": "count-me-up",
   "version": "1.0.0",
   "description": "REST-ful API for conducting a poll",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },

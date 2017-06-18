@@ -2,7 +2,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 const expect = require('chai').expect
 const should = chai.should()
-const sortCountDesc = require('../sortCountDesc')
+const sortCountDesc = require('../src/sortCountDesc')
 
 chai.use(chaiHttp)
 
@@ -14,7 +14,7 @@ describe('GET /poll', () => {
       'c': 6000000,
       'd': 4000000
     }
-    const app = require('../createServer')(initialCount, {})
+    const app = require('../src/createServer')(initialCount, {})
     const sorted = sortCountDesc(initialCount)
     chai.request(app)
       .get('/poll')

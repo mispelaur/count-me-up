@@ -1,4 +1,4 @@
-const poll = require('../poll')
+const poll = require('../src/poll')
 const expect = require('chai').expect
 
 describe('tally of votes', function () { 
