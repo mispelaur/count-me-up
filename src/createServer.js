@@ -2,8 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const poll = require('./poll')
-const getPoll = require('../handlers/getPoll')
-const createVote = require('../handlers/createVote')
+const getPoll = require('./handlers/getPoll')
+const createVote = require('./handlers/createVote')
 
 function createServer (count, userVoteCount) {
   const app = express()

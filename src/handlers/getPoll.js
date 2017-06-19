@@ -1,4 +1,4 @@
-const sortCountDesc = require('../src/sortCountDesc')
+const sortCountDesc = require('../sortCountDesc')
 
 function getPoll (count) {
   return (req, res) => {
