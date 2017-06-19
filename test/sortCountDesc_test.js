@@ -1,7 +1,7 @@
 const sortCountDesc = require('../src/sortCountDesc')
 const expect = require('chai').expect
 
-describe('sorts by descending values', function () { 
+describe('sorts by descending values', function () {
   const cases = [
     {
       name: 'empty objects',
@@ -14,13 +14,13 @@ describe('sorts by descending values', function () {
         'a': 1,
         'b': 2,
         'c': 3,
-        'd': 4,
+        'd': 4
       },
       sortedAsArray: [
         {'d': 4},
         {'c': 3},
         {'b': 2},
-        {'a': 1},
+        {'a': 1}
       ]
     },
     {
@@ -29,13 +29,13 @@ describe('sorts by descending values', function () {
         'a': 4,
         'b': 3,
         'c': 2,
-        'd': 1,
+        'd': 1
       },
       sortedAsArray: [
         {'a': 4},
         {'b': 3},
         {'c': 2},
-        {'d': 1},
+        {'d': 1}
       ]
     }
   ]

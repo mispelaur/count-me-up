@@ -1,7 +1,7 @@
 const poll = require('../src/poll')
 const expect = require('chai').expect
 
-describe('tally of votes', function () { 
+describe('tally of votes', function () {
   const cases = [
     {
       name: 'for first vote',
@@ -32,7 +32,7 @@ describe('tally of votes', function () {
   })
 })
 
-describe('tally of user vote counts', function () { 
+describe('tally of user vote counts', function () {
   const cases = [
     {
       name: 'for first time voter',
@@ -63,7 +63,7 @@ describe('tally of user vote counts', function () {
   })
 })
 
-describe('user can vote', function () { 
+describe('user can vote', function () {
   const cases = [
     {
       name: `if they've never voted before`,
