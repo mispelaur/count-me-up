@@ -57,8 +57,8 @@ describe('POST /poll/contestants/:contestant', () => {
     }
   ]
 
-  cases.forEach(function (c) {
-    describe(c.name, function () {
+  cases.forEach(c => {
+    describe(c.name, () => {
       it('is correct', done => {
         const app = require('../src/createServer')(c.count, c.userVoteCount)
         chai.request(app)

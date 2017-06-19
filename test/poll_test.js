@@ -1,7 +1,7 @@
 const poll = require('../src/poll')
 const expect = require('chai').expect
 
-describe('tally of votes', function () {
+describe('tally of votes', () => {
   const cases = [
     {
       name: 'for first vote',
@@ -19,9 +19,9 @@ describe('tally of votes', function () {
     }
   ]
 
-  cases.forEach(function (c) {
-    describe(c.name, function () {
-      it('is correct', function () {
+  cases.forEach(c => {
+    describe(c.name, () => {
+      it('is correct', () => {
         const count = c.initialCountObj
         for (let i = 0; i < c.numberOfVotes; i++) {
           poll.vote(c.contestantName, count)
@@ -32,7 +32,7 @@ describe('tally of votes', function () {
   })
 })
 
-describe('tally of user vote counts', function () {
+describe('tally of user vote counts', () => {
   const cases = [
     {
       name: 'for first time voter',
@@ -50,9 +50,9 @@ describe('tally of user vote counts', function () {
     }
   ]
 
-  cases.forEach(function (c) {
-    describe(c.name, function () {
-      it('is correct', function () {
+  cases.forEach(c => {
+    describe(c.name, () => {
+      it('is correct', () => {
         const userVoteCount = c.initialUserVoteCountObj
         for (let i = 0; i < c.numberOfVotes; i++) {
           poll.updateUserCount(c.userID, userVoteCount)
@@ -63,7 +63,7 @@ describe('tally of user vote counts', function () {
   })
 })
 
-describe('user can vote', function () {
+describe('user can vote', () => {
   const cases = [
     {
       name: `if they've never voted before`,
@@ -85,9 +85,9 @@ describe('user can vote', function () {
     }
   ]
 
-  cases.forEach(function (c) {
-    describe(c.name, function () {
-      it('is true', function () {
+  cases.forEach(c => {
+    describe(c.name, () => {
+      it('is true', () => {
         const canVote = poll.canVote(c.userID, c.UserVoteCountObj)
         expect(canVote).to.deep.equal(c.canVote)
       })
