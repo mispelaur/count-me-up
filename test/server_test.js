@@ -25,3 +25,51 @@ describe('GET /poll', () => {
       })
   })
 })
+
+describe('POST /poll/contestants/:contestant', () => {
+  const cases = [
+    {
+      name: 'first-time-voter',
+      count: {},
+      userVoteCount: {},
+      userID: '123',
+      contestant: 'a',
+      expectedStatus: 201,
+      expectedResponse: {'a': 1}
+    },
+    {
+      name: 'second-time-voter',
+      count: {'a': 1},
+      userVoteCount: {'123': 1},
+      userID: '123',
+      contestant: 'a',
+      expectedStatus: 201,
+      expectedResponse: {'a': 2}
+    },
+    {
+      name: 'fourth-time-voter',
+      count: {'a': 1, 'b': 2},
+      userVoteCount: {'123': 3},
+      userID: '123',
+      contestant: 'c',
+      expectedStatus: 403,
+      expectedResponse: {'a': 1, 'b': 2}
+    }
+  ]
+
+  cases.forEach(function (c) {
+    describe(c.name, function () {
+      it('is correct', done => {
+        const app = require('../src/createServer')(c.count, c.userVoteCount)
+        chai.request(app)
+          .post(`/poll/contestants/${c.contestant}`)
+          .set('x-user-id', c.userID)
+          .end((err, res) => {
+            res.should.have.status(c.expectedStatus)
+            expect(res.body).to.deep.equal(c.expectedResponse)
+            done()
+          })
+      })
+    })
+  })
+})
